@@ -19,13 +19,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Afanasyev.cpp" />
     <ClCompile Include="color_saver.cpp" />
     <ClCompile Include="klenin.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="sdl_general.cpp" />
+    <ClCompile Include="SimonSays.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="sdl_general.h" />
+    <ClInclude Include="Afanasyev.h" />
+    <ClInclude Include="sdl_gen.h" />
+    <ClInclude Include="SimonSays.h" />
     <ClInclude Include="task_links.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

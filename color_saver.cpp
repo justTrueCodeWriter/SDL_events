@@ -160,7 +160,7 @@ void colored_rect(SDL_Renderer* ren, int r, int g, int b, int xCoordinate, int y
 
 void saved_color_showcase(SDL_Renderer* ren, int r, int g, int b, int xCoordinate, int yCoordinate, int xSize, int ySize) {
 
-	printf("%d %d %d\n", r, g, b);
+	//printf("%d %d %d\n", r, g, b);
 
 	SDL_Rect rect;
 	rect = {xCoordinate, yCoordinate, xSize, ySize};

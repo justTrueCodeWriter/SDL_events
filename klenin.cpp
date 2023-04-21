@@ -1,9 +1,10 @@
 #include <stdlib.h>
 #include <SDL.h>
 
-
 void task3(SDL_Renderer* ren, int WIDTH, int HEIGHT) {
     int quit = 0;
+	bool blackWindow = false;
+	bool buttons[SDL_NUM_SCANCODES];
     SDL_Event event;
     int leftMouseButton = 0;
     SDL_Point mousePos;
@@ -19,9 +20,14 @@ void task3(SDL_Renderer* ren, int WIDTH, int HEIGHT) {
             switch (event.type)
             {
             case SDL_QUIT:
-                quit = true;
+                blackWindow = true;
                 break;
           
+            case SDL_KEYDOWN:
+                switch (event.key.keysym.scancode) {
+                    case SDL_SCANCODE_ESCAPE: blackWindow = true; break;
+                }
+                
             case SDL_MOUSEBUTTONDOWN:
                 if (event.button.button == SDL_BUTTON_LEFT)
                 {
@@ -78,6 +84,30 @@ void task3(SDL_Renderer* ren, int WIDTH, int HEIGHT) {
             SDL_SetRenderDrawColor(ren, 255, 255, 0, 255);
             SDL_RenderFillRect(ren, &rect3);
             SDL_RenderPresent(ren);
+
+            if (blackWindow == true) {
+					SDL_SetRenderDrawColor(ren, 0, 0, 0, 255);
+					SDL_RenderClear(ren);
+					SDL_RenderPresent(ren);
+				}
+				while (blackWindow == true) {
+					while (SDL_PollEvent(&event) != 0) {
+						switch (event.type) {
+						case SDL_QUIT:
+							return;
+							break;
+						case SDL_KEYDOWN:
+							if (buttons[event.key.keysym.scancode]) {
+								blackWindow = false;
+							}
+							switch (event.key.keysym.scancode) {
+							case SDL_SCANCODE_ESCAPE:
+								return;
+								break;
+							}
+						}
+					}
+				}
     }
 	
 

@@ -1,2 +1,4 @@
-﻿  sdl_general.cpp
+﻿  SimonSays.cpp
+D:\Documents\Study\Practice\SDL_events\SimonSays.cpp(65,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+D:\Documents\Study\Practice\SDL_events\SimonSays.cpp(74,6): warning C4101: userArray: неиспользованная локальная переменная
   SDL_events.vcxproj -> D:\Documents\Study\Practice\SDL_events\x64\Debug\SDL_events.exe
